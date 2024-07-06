@@ -3,6 +3,8 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.6.
 
 ## Development server
+Run `npm i` to install the Node-Modules
+Run `npm i primeng` to install the all dependecies of PrimeNg.
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
