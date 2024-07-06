@@ -1,0 +1,48 @@
+<div class="flex justify-content-between">
+    <h2>Products</h2>
+    <p-button label="Add Product" (click)="showAddModal()"></p-button>
+</div>
+<p-table [value]="products" [paginator]="true" [rows]="5">
+    <ng-template pTemplate="header">
+        <tr>
+            <!-- <th>Id</th> -->
+            <th>Title</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th></th>
+            <th></th>
+            <!-- <th>Image</th> -->
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+        <tr>
+            <!-- <td>{{ product.id }}</td> -->
+            <td>{{ product.title }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.category }}</td>
+            <td><button pButton class="p-button-rounded p-button-success  mr-2"
+                    (click)="showEditmodal(product)">EDIT</button></td>
+            <td><button pButton class="p-button-rounded p-button-warning  mr-2"
+                    (click)="deleteProduct(product)">DELETE</button></td>
+            <!-- <td><img src="{{ product.image }}" height="35px" /></td> -->
+        </tr>
+    </ng-template>
+</p-table>
+
+<app-add-edit-product [displayAddEditModal]="displayAddEditModal" [selectedProduct]="selectedProduct"
+    (clickClose)="hideAddModal($event)" (clickAdd)="saveOrUpdateProductList($event)">
+</app-add-edit-product>
+
+<p-confirmDialog header="Delete"></p-confirmDialog>
+
+<div style="width: 600px;">
+    <canvas id="myChart"></canvas>
+</div>
+
+
+
+<!-- <p-toast position="bottom-right"></p-toast> -->
+
+
+
+<!-- ============================================== -->
