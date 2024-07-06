@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ProcuctService } from './procuct.service';
 import { Product } from './product';
 import { ConfirmationService } from 'primeng/api';
-import { CategoryScale, Chart, registerables } from 'chart.js';
+import { Chart, registerables } from 'chart.js';
 Chart.register(...registerables);
 
 
@@ -45,7 +45,7 @@ export class ProductComponent {
           }, {} as Record<string, number>)
         this.RenderCharts();
         window.localStorage.setItem("test", JSON.stringify(this.tableCategory));
-        console.log("TABLECHART", this.tableCategory)
+
       })
 
 
@@ -89,7 +89,7 @@ export class ProductComponent {
           response => {
             //this.getProductList();
             this.products = this.products.filter(data => data.id !== product.id);
-            console.log(response);
+
           },
         )
       }
