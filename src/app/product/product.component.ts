@@ -44,8 +44,6 @@ export class ProductComponent {
             return acc;
           }, {} as Record<string, number>)
         this.RenderCharts();
-        window.localStorage.setItem("test", JSON.stringify(this.tableCategory));
-
       })
 
 
