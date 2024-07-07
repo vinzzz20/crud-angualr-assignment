@@ -54,7 +54,7 @@ export class ProductComponent {
     this.productService.getProducts().subscribe(
       response => {
         this.products = response;
-        console.log(response);
+
       }
     )
   }
